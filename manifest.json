@@ -1,0 +1,12 @@
+{
+  "name": "批量复制画板链接",
+  "id": "com.jiahu.batch-copy-frame-links",
+  "api": "1.0.0",
+  "enablePrivatePluginApi": true,
+  "editorType": ["figma"],
+  "main": "code.js",
+  "ui": "ui.html",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}
