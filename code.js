@@ -31,7 +31,7 @@ function collectLinks() {
       type: "result",
       ok: false,
       reason: "empty",
-      message: "未选中任何节点。请先选中 FRAME 或 SECTION。"
+      message: "未选中任何节点。请先选中 FRAME、SECTION 或 INSTANCE。"
     });
     return;
   }
@@ -40,7 +40,7 @@ function collectLinks() {
   const ignored = [];
 
   for (const node of selection) {
-    const isSupported = node.type === "FRAME" || node.type === "SECTION";
+    const isSupported = node.type === "FRAME" || node.type === "SECTION" || node.type === "INSTANCE";
     if (isSupported) {
       accepted.push(node);
     } else {
@@ -53,7 +53,7 @@ function collectLinks() {
       type: "result",
       ok: false,
       reason: "unsupported",
-      message: "当前选择不包含 FRAME 或 SECTION。"
+      message: "当前选择不包含 FRAME、SECTION 或 INSTANCE。"
     });
     return;
   }
@@ -66,7 +66,7 @@ function collectLinks() {
       type: "result",
       ok: false,
       reason: "no-file-key",
-      message: "无法读取文件 Key。请先保存为云端文件后重试。"
+      message: "无法读取文件 Key。请确认文件已保存到云端，并使用支持私有 API 的插件后重试。"
     });
     return;
   }
